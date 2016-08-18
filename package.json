@@ -1,6 +1,6 @@
 {
   "name": "sh-input-checkbox",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Checkbox input superhero theme",
   "main": "bin/sh-input-checkbox.js",
   "scripts": {

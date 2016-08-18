@@ -22139,11 +22139,11 @@
 	
 				var _react2 = _interopRequireDefault(_react);
 	
-				var _iconCheckboxUnselected = __webpack_require__( /*! ./icons/icon-checkbox-unselected */3);
+				var _iconCheckboxUnselected = __webpack_require__( /*! ./icons/icon-checkbox-unselected */2);
 	
 				var _iconCheckboxUnselected2 = _interopRequireDefault(_iconCheckboxUnselected);
 	
-				var _iconCheckboxSelected = __webpack_require__( /*! ./icons/icon-checkbox-selected */4);
+				var _iconCheckboxSelected = __webpack_require__( /*! ./icons/icon-checkbox-selected */3);
 	
 				var _iconCheckboxSelected2 = _interopRequireDefault(_iconCheckboxSelected);
 	
@@ -22175,7 +22175,7 @@
 					}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
 				}
 	
-				__webpack_require__( /*! ./sh-input-checkbox.scss */5);
+				__webpack_require__( /*! ./sh-input-checkbox.scss */4);
 	
 				var ShInputCheckbox = function (_Component) {
 					_inherits(ShInputCheckbox, _Component);
@@ -22248,9 +22248,8 @@
 				module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
 	
 				/***/
-			},,
+			},
 			/* 2 */
-			/* 3 */
 			/*!***********************************************!*\
 	    !*** ./src/icons/icon-checkbox-unselected.js ***!
 	    \***********************************************/
@@ -22278,7 +22277,7 @@
 	
 				/***/
 			},
-			/* 4 */
+			/* 3 */
 			/*!*********************************************!*\
 	    !*** ./src/icons/icon-checkbox-selected.js ***!
 	    \*********************************************/
@@ -22306,7 +22305,7 @@
 	
 				/***/
 			},
-			/* 5 */
+			/* 4 */
 			/*!************************************!*\
 	    !*** ./src/sh-input-checkbox.scss ***!
 	    \************************************/
@@ -22315,10 +22314,10 @@
 				// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 				// load the styles
-				var content = __webpack_require__( /*! !./../~/css-loader!./../~/sass-loader!./sh-input-checkbox.scss */6);
+				var content = __webpack_require__( /*! !./../~/css-loader!./../~/sass-loader!./sh-input-checkbox.scss */5);
 				if (typeof content === 'string') content = [[module.id, content, '']];
 				// add the styles to the DOM
-				var update = __webpack_require__( /*! ./../~/style-loader/addStyles.js */8)(content, {});
+				var update = __webpack_require__( /*! ./../~/style-loader/addStyles.js */7)(content, {});
 				if (content.locals) module.exports = content.locals;
 				// Hot Module Replacement
 				if (false) {
@@ -22338,13 +22337,13 @@
 	
 				/***/
 			},
-			/* 6 */
+			/* 5 */
 			/*!*******************************************************************!*\
 	    !*** ./~/css-loader!./~/sass-loader!./src/sh-input-checkbox.scss ***!
 	    \*******************************************************************/
 			/***/function (module, exports, __webpack_require__) {
 	
-				exports = module.exports = __webpack_require__( /*! ./../~/css-loader/lib/css-base.js */7)();
+				exports = module.exports = __webpack_require__( /*! ./../~/css-loader/lib/css-base.js */6)();
 				// imports
 	
 	
@@ -22356,7 +22355,7 @@
 	
 				/***/
 			},
-			/* 7 */
+			/* 6 */
 			/*!**************************************!*\
 	    !*** ./~/css-loader/lib/css-base.js ***!
 	    \**************************************/
@@ -22413,7 +22412,7 @@
 	
 				/***/
 			},
-			/* 8 */
+			/* 7 */
 			/*!*************************************!*\
 	    !*** ./~/style-loader/addStyles.js ***!
 	    \*************************************/
