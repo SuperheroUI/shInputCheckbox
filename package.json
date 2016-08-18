@@ -1,8 +1,8 @@
 {
   "name": "sh-input-checkbox",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Checkbox input superhero theme",
-  "main": "bin/sh-input-checkbox.js",
+  "main": "./bin/sh-input-checkbox.js",
   "scripts": {
     "clean": "rm -r ./bin",
     "test": "./node_modules/.bin/karma start",
