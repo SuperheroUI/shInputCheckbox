@@ -6,6 +6,7 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            test: 1,
             value:true
         };
         this.handleChange = this.handleChange.bind(this);
@@ -23,10 +24,10 @@ class App extends React.Component {
     render() {
         return <div>
             <form name="test" onSubmit={this.handleSubmit}>
-                <ShInputCheckbox value={this.state.value}
-                                 onChange={this.handleChange}
-
-                />
+                <ShInputCheckbox value={this.state.value} onChange={this.handleChange} />
+                <ShInputCheckbox  onChange={this.handleChange}  />
+                <ShInputCheckbox  onChange={this.handleChange} required />
+                <span>{JSON.stringify(this.state.value)}</span>
                 <button type="submit">go</button>
             </form>
         </div>

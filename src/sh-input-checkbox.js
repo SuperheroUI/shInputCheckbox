@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import IconCheckboxUnselected from './icons/icon-checkbox-unselected';
 import IconCheckboxSelected from './icons/icon-checkbox-selected';
+import * as _ from 'lodash';
 
 require('./sh-input-checkbox.scss');
 
@@ -21,10 +22,13 @@ class ShInputCheckbox extends Component {
                 }
             )
         }
+    }
 
-        if (this.props.required) {
-            this.state.placeholderText = 'Required Field';
-            this.setState(this.state);
+    componentWillReceiveProps(props) {
+        if (!_.isUndefined(props.value) && !_.isEqual(props.value, this.state.value)) {
+            var newState = _.clone(this.state);
+            newState.value = props.value;
+            this.setState(newState, this.validate);
         }
     }
 
@@ -56,5 +60,16 @@ class ShInputCheckbox extends Component {
         )
     }
 }
+
+ShInputCheckbox.propTypes = {
+    validator: React.PropTypes.object,
+    value: React.PropTypes.any,
+    onChange: React.PropTypes.func
+};
+
+ShInputCheckbox.defaultProps = {
+    value: null,
+    onChange: function(){}
+};
 
 export default ShInputCheckbox;
