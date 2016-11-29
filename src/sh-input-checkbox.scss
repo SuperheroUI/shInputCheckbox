@@ -1,6 +1,6 @@
 @import '../node_modules/sh-core/src/base';
 
-.shInputCheckbox {
+.sh-input-checkbox {
     outline: 0;
     transition: color $transition-hover;
 
@@ -8,12 +8,21 @@
         fill: $color-font;
         height: 30px;
         width: 30px;
+        transition: fill $transition-fast;
+        border-radius: 4px;
     }
 
+    &.sh-invalid {
+        svg {
+            fill: $color-error;
+            transition: fill $transition-fast;
+        }
+    }
 
     &:hover {
         svg {
             fill: $color-primary;
+            transition: fill $transition-fast;
         }
     }
 
@@ -23,8 +32,12 @@
         }
     }
 
-    &:hover {
-        color: $color-primary;
+    &.sh-disabled {
+        pointer-events: none;
+
+        svg {
+            fill: $color-box-background3;
+        }
     }
 
     i {
