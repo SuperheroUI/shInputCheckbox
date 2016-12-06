@@ -58,9 +58,14 @@ class ShInputCheckbox extends Component {
         }
 
         if (!_.isUndefined(props.disabled)) {
-
             let newClassList = _.clone(this.state.classList);
             newClassList.shDisabled = props.disabled;
+            this.setState({
+                classList: newClassList
+            });
+        } else {
+            let newClassList = _.clone(this.state.classList);
+            newClassList.shDisabled = false;
             this.setState({
                 classList: newClassList
             });

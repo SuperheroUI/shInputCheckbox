@@ -97,4 +97,43 @@ describe('root', function() {
         expect(root.componentWillUnmount).toBeDefined();
         root.componentWillUnmount();
     });
+    it('update the disabled status', function() {
+        let value = false;
+
+        let root = TestUtils.renderIntoDocument(<ShInputCheckbox value={value} disabled={true}/>);
+        expect(root.state.classList.shDisabled).toBe(true);
+        root.componentWillUnmount();
+    });
+    it('update the disabled status', function() {
+        let value = true;
+
+        let root = TestUtils.renderIntoDocument(<ShInputCheckbox value={value} disabled={false}/>);
+        expect(root.state.classList.shDisabled).toBe(false);
+        root.componentWillUnmount();
+    });
+    it('update the disabled status', function() {
+        let value = true;
+
+        let root = TestUtils.renderIntoDocument(<ShInputCheckbox value={value} disabled={false}/>);
+        root.componentWillReceiveProps({disabled: true});
+        expect(root.state.classList.shDisabled).toBe(true);
+        root.componentWillUnmount();
+    });
+    it('update the disabled status', function() {
+        let value = true;
+
+        let root = TestUtils.renderIntoDocument(<ShInputCheckbox value={value} disabled={false}/>);
+        root.componentWillReceiveProps({disabled: false});
+        expect(root.state.classList.shDisabled).toBe(false);
+        root.componentWillUnmount();
+    });
+    it('update the disabled status', function() {
+        let value = true;
+
+        let root = TestUtils.renderIntoDocument(<ShInputCheckbox value={value} disabled={true}/>);
+        let undef = undefined;
+        root.componentWillReceiveProps({disabled: undef});
+        expect(root.state.classList.shDisabled).toBe(false);
+        root.componentWillUnmount();
+    });
 });
