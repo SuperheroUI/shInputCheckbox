@@ -10,7 +10,7 @@ class ShInputCheckbox extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            classList: {}
+            classList: {shDisabled: false}
         };
         this.toggleChecked = this.toggleChecked.bind(this);
         this.toggleWithKey = this.toggleWithKey.bind(this);
@@ -38,7 +38,7 @@ class ShInputCheckbox extends Component {
 
     componentDidMount() {
         let newState = {};
-        if(this.props.disabled){
+        if (this.props.disabled) {
             newState.classList = {};
             newState.classList.shDisabled = this.props.disabled;
         }
@@ -55,6 +55,15 @@ class ShInputCheckbox extends Component {
             let newState = _.clone(this.state);
             newState.value = props.value;
             this.setState(newState, this.validate);
+        }
+
+        if (!_.isUndefined(props.disabled)) {
+
+            let newClassList = _.clone(this.state.classList);
+            newClassList.shDisabled = props.disabled;
+            this.setState({
+                classList: newClassList
+            });
         }
     }
 
@@ -90,9 +99,9 @@ class ShInputCheckbox extends Component {
     };
 
     render() {
-        let {required,validator, ...other} = this.props;
+        let {required, validator, ...other} = this.props;
         return (
-            <div className={"sh-input-checkbox "+ ShCore.getClassNames(this.state.classList)}
+            <div className={"sh-input-checkbox " + ShCore.getClassNames(this.state.classList)}
                  onKeyDown={this.toggleWithKey}
                  tabIndex="0"
                  onClick={this.toggleChecked}
@@ -116,7 +125,7 @@ ShInputCheckbox.propTypes = {
 ShInputCheckbox.defaultProps = {
     validator: null,
     value: null,
-    onChange:_.noop
+    onChange: _.noop
 };
 
 export default ShInputCheckbox;
