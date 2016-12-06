@@ -86,12 +86,14 @@
 	        _this.state = {
 	            value1: true,
 	            value2: false,
-	            value: false
+	            value: false,
+	            dis: false
 	        };
 	        _this.handleChange = _this.handleChange.bind(_this);
 	        _this.handleChange1 = _this.handleChange1.bind(_this);
 	        _this.handleChange2 = _this.handleChange2.bind(_this);
 	        _this.handleSubmit = _this.handleSubmit.bind(_this);
+	        _this.disableMe = _this.disableMe.bind(_this);
 	        return _this;
 	    }
 	
@@ -108,13 +110,19 @@
 	    }, {
 	        key: 'handleChange',
 	        value: function handleChange(value) {
-	            console.log('fired');
 	            this.setState({ value: value });
 	        }
 	    }, {
 	        key: 'handleSubmit',
 	        value: function handleSubmit() {
 	            alert(this.state.value);
+	        }
+	    }, {
+	        key: 'disableMe',
+	        value: function disableMe() {
+	            this.setState({
+	                dis: true
+	            });
 	        }
 	    }, {
 	        key: 'render',
@@ -126,7 +134,7 @@
 	                    _shForm2.default,
 	                    { onSubmit: this.handleSubmit },
 	                    _react2.default.createElement(_shInputCheckbox2.default, { value: this.state.value, onChange: this.handleChange }),
-	                    _react2.default.createElement(_shInputCheckbox2.default, { value: this.state.value1, onChange: this.handleChange1, disabled: true }),
+	                    _react2.default.createElement(_shInputCheckbox2.default, { value: this.state.value1, onChange: this.handleChange1, disabled: this.state.dis }),
 	                    _react2.default.createElement(_shInputCheckbox2.default, { value: this.state.value2, onChange: this.handleChange2, required: true }),
 	                    _react2.default.createElement(
 	                        'span',
@@ -154,6 +162,11 @@
 	                        { type: 'submit' },
 	                        'go'
 	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'button',
+	                    { onClick: this.disableMe },
+	                    'disable ck'
 	                )
 	            );
 	        }
@@ -22235,7 +22248,7 @@
 						var _this = _possibleConstructorReturn(this, (ShInputCheckbox.__proto__ || Object.getPrototypeOf(ShInputCheckbox)).call(this, props));
 	
 						_this.state = {
-							classList: {}
+							classList: { shDisabled: false }
 						};
 						_this.toggleChecked = _this.toggleChecked.bind(_this);
 						_this.toggleWithKey = _this.toggleWithKey.bind(_this);
@@ -22285,6 +22298,15 @@
 								var newState = _.clone(this.state);
 								newState.value = props.value;
 								this.setState(newState, this.validate);
+							}
+	
+							if (!_.isUndefined(props.disabled)) {
+	
+								var newClassList = _.clone(this.state.classList);
+								newClassList.shDisabled = props.disabled;
+								this.setState({
+									classList: newClassList
+								});
 							}
 						}
 					}, {
