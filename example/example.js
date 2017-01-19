@@ -142,30 +142,8 @@
 	                    _shForm2.default,
 	                    { onSubmit: this.handleSubmit },
 	                    _react2.default.createElement(_shInputCheckbox2.default, { value: this.state.value, onChange: this.handleChange }),
-	                    JSON.stringify(this.state.dis),
 	                    _react2.default.createElement(_shInputCheckbox2.default, { value: this.state.value1, onChange: this.handleChange1, disabled: this.state.dis }),
 	                    _react2.default.createElement(_shInputCheckbox2.default, { value: this.state.value2, onChange: this.handleChange2, required: true }),
-	                    _react2.default.createElement(
-	                        'span',
-	                        null,
-	                        JSON.stringify(this.state.value)
-	                    ),
-	                    _react2.default.createElement('br', null),
-	                    _react2.default.createElement('br', null),
-	                    _react2.default.createElement(
-	                        'span',
-	                        null,
-	                        JSON.stringify(this.state.value1)
-	                    ),
-	                    _react2.default.createElement('br', null),
-	                    _react2.default.createElement('br', null),
-	                    _react2.default.createElement(
-	                        'span',
-	                        null,
-	                        JSON.stringify(this.state.value2)
-	                    ),
-	                    _react2.default.createElement('br', null),
-	                    _react2.default.createElement('br', null),
 	                    _react2.default.createElement(
 	                        'button',
 	                        { type: 'submit' },
