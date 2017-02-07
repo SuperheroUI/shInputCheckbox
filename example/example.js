@@ -94,6 +94,7 @@
 	        _this.handleChange2 = _this.handleChange2.bind(_this);
 	        _this.handleSubmit = _this.handleSubmit.bind(_this);
 	        _this.disableMe = _this.disableMe.bind(_this);
+	        _this.enableMe = _this.enableMe.bind(_this);
 	        return _this;
 	    }
 	
@@ -125,6 +126,13 @@
 	            });
 	        }
 	    }, {
+	        key: 'enableMe',
+	        value: function enableMe() {
+	            this.setState({
+	                dis: undefined
+	            });
+	        }
+	    }, {
 	        key: 'render',
 	        value: function render() {
 	            return _react2.default.createElement(
@@ -134,6 +142,7 @@
 	                    _shForm2.default,
 	                    { onSubmit: this.handleSubmit },
 	                    _react2.default.createElement(_shInputCheckbox2.default, { value: this.state.value, onChange: this.handleChange }),
+	                    JSON.stringify(this.state.dis),
 	                    _react2.default.createElement(_shInputCheckbox2.default, { value: this.state.value1, onChange: this.handleChange1, disabled: this.state.dis }),
 	                    _react2.default.createElement(_shInputCheckbox2.default, { value: this.state.value2, onChange: this.handleChange2, required: true }),
 	                    _react2.default.createElement(
@@ -167,6 +176,11 @@
 	                    'button',
 	                    { onClick: this.disableMe },
 	                    'disable ck'
+	                ),
+	                _react2.default.createElement(
+	                    'button',
+	                    { onClick: this.enableMe },
+	                    'enable ck'
 	                )
 	            );
 	        }
@@ -22314,11 +22328,16 @@
 							}
 	
 							if (!_.isUndefined(props.disabled)) {
-	
 								var newClassList = _.clone(this.state.classList);
 								newClassList.shDisabled = props.disabled;
 								this.setState({
 									classList: newClassList
+								});
+							} else {
+								var _newClassList = _.clone(this.state.classList);
+								_newClassList.shDisabled = false;
+								this.setState({
+									classList: _newClassList
 								});
 							}
 						}
