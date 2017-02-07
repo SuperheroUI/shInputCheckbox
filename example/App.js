@@ -17,6 +17,7 @@ class App extends React.Component {
         this.handleChange2 = this.handleChange2.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.disableMe = this.disableMe.bind(this);
+        this.enableMe = this.enableMe.bind(this);
     }
 
     handleChange1(value) {
@@ -35,7 +36,13 @@ class App extends React.Component {
 
     disableMe() {
         this.setState({
-            dis : true
+            dis: true
+        })
+    }
+
+    enableMe() {
+        this.setState({
+            dis : undefined
         })
     }
 
@@ -52,6 +59,7 @@ class App extends React.Component {
             </ShForm>
 
             <button onClick={this.disableMe}>disable ck</button>
+            <button onClick={this.enableMe}>enable ck</button>
         </div>
     }
 }
