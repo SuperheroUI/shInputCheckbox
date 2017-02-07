@@ -52,9 +52,7 @@ class App extends React.Component {
                 <ShInputCheckbox value={this.state.value}  onChange={this.handleChange}/>
                 <ShInputCheckbox value={this.state.value1}  onChange={this.handleChange1} disabled={this.state.dis}/>
                 <ShInputCheckbox value={this.state.value2}  onChange={this.handleChange2} required/>
-                <span>{JSON.stringify(this.state.value)}</span><br/><br/>
-                <span>{JSON.stringify(this.state.value1)}</span><br/><br/>
-                <span>{JSON.stringify(this.state.value2)}</span><br/><br/>
+
                 <button type="submit">go</button>
             </ShForm>
 
