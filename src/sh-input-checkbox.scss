@@ -22,7 +22,7 @@
 
     &:hover {
         svg {
-            fill: color-primary;
+            fill: $color-primary;
             transition: fill $transition-fast;
         }
     }
